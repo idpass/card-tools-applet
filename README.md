@@ -10,7 +10,7 @@ SW | DESCRIPTION
 0x6700 | Wrong DATA length
 
 ### tools package
-**tools** package contains common classes, used in other idpass applets. <br>**MUST** be uploaded first.
+**tools** package contains common classes, used in other ID PASS applets. <br>**MUST** be uploaded first.
 
 AID | DESCRIPTION
 -- | --

@@ -29,7 +29,7 @@ import org.globalplatform.GPSystem;
 import org.globalplatform.SecureChannel;
 
 /**
- * Base applet class for idpass project
+ * Base applet class for ID PASS project
  */
 public abstract class IdpassApplet extends Applet implements ExtendedLength, AppletEvent {
 
