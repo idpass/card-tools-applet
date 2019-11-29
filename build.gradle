@@ -1,0 +1,28 @@
+group 'card-applets'
+apply plugin: 'javacard'
+
+javacard {
+    sdkVersion = "3.0.4"
+    cap {
+        jar {
+            archiveName 'tools.jar'
+        }
+        sourceSets {
+            main.java.srcDirs = ['src']
+        }
+
+        packageName = 'org.idpass.tools'
+        version = '0.1'
+        aid = '0xF7:0x69:0x64:0x70:0x61:0x73:0x73:0x00'
+ 
+        dependencies {
+            compile fileTree(dir: rootDir.absolutePath + '/libs/globalplatform-2_1_1', include: '*.jar')
+            javacardExport files(rootDir.absolutePath + '/libs/globalplatform-2_1_1/')
+        }
+    }
+}    
+
+compileJava {
+    sourceCompatibility = 1.6
+    targetCompatibility = 1.6
+}
