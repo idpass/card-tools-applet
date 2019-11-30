@@ -4,9 +4,6 @@ apply plugin: 'javacard'
 javacard {
     sdkVersion = "3.0.4"
     cap {
-        jar {
-            archiveName 'tools.jar'
-        }
         sourceSets {
             main.java.srcDirs = ['src']
         }
