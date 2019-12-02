@@ -4,10 +4,6 @@ apply plugin: 'javacard'
 javacard {
     sdkVersion = "3.0.4"
     cap {
-        sourceSets {
-            main.java.srcDirs = ['src']
-        }
-
         packageName = 'org.idpass.tools'
         version = '0.1'
         aid = '0xF7:0x69:0x64:0x70:0x61:0x73:0x73:0x00'
