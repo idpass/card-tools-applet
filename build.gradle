@@ -1,21 +1,37 @@
 group 'card-applets'
 apply plugin: 'javacard'
 
+jar {
+    manifest {
+        attributes ("Uri":_getUri(projectDir))
+        attributes ("Commit-hash":_getGitHash(projectDir))
+    }
+    baseName 'idpass_tools'
+}
+
 javacard {
-    sdkVersion = "3.0.4"
-    cap {
-        packageName = 'org.idpass.tools'
-        version = '0.1'
-        aid = '0xF7:0x69:0x64:0x70:0x61:0x73:0x73:0x00'
- 
-        dependencies {
-            compile fileTree(dir: rootDir.absolutePath + '/libs/globalplatform-2_1_1', include: '*.jar')
-            javacardExport files(rootDir.absolutePath + '/libs/globalplatform-2_1_1/')
+    config {
+        jckit _JC_SELECTED
+        // Using custom repo with jcardsim
+        addSurrogateJcardSimRepo false
+        addImplicitJcardSim false
+        addImplicitJcardSimJunit false
+
+        cap {
+            packageName = 'org.idpass.tools'
+            version = '0.1'
+            aid = '0xF7:0x69:0x64:0x70:0x61:0x73:0x73:0x00'
+            output 'tools.cap'
+
+            dependencies {
+                remote 'local:gp211:2.1.1'
+            }
         }
     }
-}    
+}
 
 compileJava {
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.6
+    sourceCompatibility = _sourceCompatibility 
+    targetCompatibility = _targetCompatibility 
 }
+
