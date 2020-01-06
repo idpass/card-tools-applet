@@ -52,6 +52,8 @@ public abstract class IdpassApplet extends Applet implements ExtendedLength, App
     protected byte              p2;
 
     protected SecureChannel       secureChannel;
+    protected short aid_offset;
+    protected byte aid_len;
 
     public boolean select() {
         // retrieve the handle of the Security Domain associated with this
